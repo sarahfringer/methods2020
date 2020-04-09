@@ -9,9 +9,16 @@ using CSV
 a_df = CSV.File("C:\\Users\\Angelina Ossimetha\\methods2020\\class_files-2020\\data\\mimic_demo\\ADMISSIONS.csv"; 
 select=[:subject_id, :admittime, :dischtime, :deathtime, :insurance, :language, :religion, :marital_status, :ethnicity,:hospital_expire_flag],
  header = 1, footerskip = 0) |> DataFrame
-
+#Mac admissions dataframe
+a_df = CSV.File("/Users/emilyyamron/methods2020/class_files-2020/data/mimic_demo/ADMISSIONS.csv"; 
+select=[:subject_id, :admittime, :dischtime, :deathtime, :insurance, :language, :religion, :marital_status, :ethnicity,:hospital_expire_flag],
+ header = 1, footerskip = 0) |> DataFrame
 # DIAGNOSES dataframe
 d_df = CSV.File("C:\\Users\\Angelina Ossimetha\\methods2020\\class_files-2020\\data\\mimic_demo\\DIAGNOSES_ICD.csv"; 
+select=[:subject_id, :icd9_code], header = 1, footerskip = 0) |> DataFrame
+
+#Mac DIAGNOSES dataframe
+d_df = CSV.File("/Users/emilyyamron/methods2020/class_files-2020/data/mimic_demo/DIANOSES_ICD.csv"; 
 select=[:subject_id, :icd9_code], header = 1, footerskip = 0) |> DataFrame 
 
 #patients dataframe
